@@ -3,11 +3,12 @@ from flask import render_template
 import os
 import sys
 
-i = int(open(os.path.join('app', 'static', 'viewcount.dat'), 'r').read())
+viewcountpath = os.path.join('app', 'static', 'viewcount.dat')
+i = int(open(viewcountpath, 'r').read())
 def getIncrement(n=1):
     global i
     i += n
-    open(os.path.join, 'w').write(str(i))
+    open(viewcountpath, 'w').write(str(i))
     return i
 
 @app.route('/')
