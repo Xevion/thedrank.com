@@ -1,7 +1,7 @@
 # Custom
 /thedrankenv/*
-thedrankenv.ini
-thedrankenv.sock
+thedrank.ini
+thedrank.sock
 *.old
 *.pem
 *.pyc
