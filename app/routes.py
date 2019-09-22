@@ -8,7 +8,6 @@ viewcountpath = os.path.join('app', 'static', 'viewcount.dat')
 counter = Value('i', int(open(viewcountpath, 'r').read()))
 
 def getIncrement(n=1):
-    global i
     with counter.get_lock():
         counter.value += n
     open(viewcountpath, 'w').write(str(counter.value))
