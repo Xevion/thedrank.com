@@ -1,15 +1,18 @@
 from app import app
 from flask import render_template
+from multiprocessing import Value
 import os
 import sys
 
 viewcountpath = os.path.join('app', 'static', 'viewcount.dat')
-i = int(open(viewcountpath, 'r').read())
+counter = Value('i', int(open(viewcountpath, 'r').read()))
+
 def getIncrement(n=1):
     global i
-    i += n
-    open(viewcountpath, 'w').write(str(i))
-    return i
+    with counter.get_lock():
+        counter.value += n
+    open(viewcountpath, 'w').write(str(counter.value))
+    return counter.value
 
 @app.route('/')
 def index():
