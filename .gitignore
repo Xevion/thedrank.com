@@ -1,6 +1,7 @@
 # Custom
-/xeviondevenv/*
-xevion.dev.ini
+/thedrankenv/*
+thedrankenv.ini
+thedrankenv.sock
 *.old
 *.pem
 *.pyc
@@ -13,6 +14,7 @@ key
 /app/__pycache__/*
 /__pycache__/*
 app/static/token.dat
+.vscode/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
