@@ -15,6 +15,7 @@ key
 /__pycache__/*
 app/static/token.dat
 .vscode/*
+app/static/viewcount.dat
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
